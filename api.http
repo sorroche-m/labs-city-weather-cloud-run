@@ -1,0 +1,118 @@
+### Variáveis de Ambiente
+@baseUrl = http://localhost:8081
+
+
+
+### 1. CEP de São Paulo - Av. Paulista (200 OK)
+GET {{baseUrl}}/weather/01310100
+Content-Type: application/json
+
+###
+
+### 2. CEP do Rio de Janeiro - Copacabana (200 OK)
+GET {{baseUrl}}/weather/22070002
+Content-Type: application/json
+
+###
+
+### 3. CEP de Brasília (200 OK)
+GET {{baseUrl}}/weather/70040902
+Content-Type: application/json
+
+###
+
+### 4. CEP de Belo Horizonte (200 OK)
+GET {{baseUrl}}/weather/30130100
+Content-Type: application/json
+
+###
+
+### 5. CEP de Curitiba (200 OK)
+GET {{baseUrl}}/weather/80060000
+Content-Type: application/json
+
+###
+
+### 6. CEP de Porto Alegre (200 OK)
+GET {{baseUrl}}/weather/90010150
+Content-Type: application/json
+
+###
+
+### 7. CEP de Salvador (200 OK)
+GET {{baseUrl}}/weather/40020000
+Content-Type: application/json
+
+###
+
+### 8. CEP de Fortaleza (200 OK)
+GET {{baseUrl}}/weather/60115220
+Content-Type: application/json
+
+###
+
+### ========================================
+### CENÁRIOS DE ERRO - FORMATO INVÁLIDO (422)
+### ========================================
+
+### 9. CEP com 7 dígitos (422 - invalid zipcode)
+GET {{baseUrl}}/weather/0131010
+Content-Type: application/json
+
+###
+
+### 10. CEP com 9 dígitos (422 - invalid zipcode)
+GET {{baseUrl}}/weather/013101000
+Content-Type: application/json
+
+###
+
+### 11. CEP com letras (422 - invalid zipcode)
+GET {{baseUrl}}/weather/0131010A
+Content-Type: application/json
+
+###
+
+### 12. CEP com caracteres especiais (422 - invalid zipcode)
+GET {{baseUrl}}/weather/01310-100
+Content-Type: application/json
+
+###
+
+### 13. CEP vazio (422 - invalid zipcode)
+GET {{baseUrl}}/weather/
+Content-Type: application/json
+
+###
+
+### 14. CEP com espaços (422 - invalid zipcode)
+GET {{baseUrl}}/weather/01310 100
+Content-Type: application/json
+
+###
+
+### 15. CEP apenas com letras (422 - invalid zipcode)
+GET {{baseUrl}}/weather/ABCDEFGH
+Content-Type: application/json
+
+###
+
+### ========================================
+### CENÁRIOS DE ERRO - CEP NÃO ENCONTRADO (404)
+### ========================================
+
+### 16. CEP inexistente (404 - can not find zipcode)
+GET {{baseUrl}}/weather/99999999
+Content-Type: application/json
+
+###
+
+### 17. CEP inválido mas com formato correto (404 - can not find zipcode)
+GET {{baseUrl}}/weather/00000000
+Content-Type: application/json
+
+###
+
+### 18. CEP inválido (404 - can not find zipcode)
+GET {{baseUrl}}/weather/12345678
+Content-Type: application/json
