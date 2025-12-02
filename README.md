@@ -81,4 +81,16 @@ Para facilitar a validação e correção, o projeto inclui o arquivo `api.http`
 
 ## ☁️ Google Cloud Run
 
-URL de Produção: `[Insira aqui a URL do seu Cloud Run]`
+URL de Produção para correção acadêmica: `https://city-weather-cloud-run-620205445610.us-central1.run.app`
+
+**Atenção:** A aplicação não responde na raiz (`/`). É necessário complementar o endereço com a rota `/weather/` seguida do CEP.
+
+**Formato:**
+`https://<URL-DO-CLOUD-RUN>/weather/<CEP>`
+
+**Exemplo real:**
+```bash
+https://city-weather-cloud-run-620205445610.us-central1.run.app/weather/01310100
+```
+
+> **Nota:** O CEP deve conter **apenas números**, sem espaços, traços ou caracteres especiais.
