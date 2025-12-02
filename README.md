@@ -9,7 +9,7 @@ Para executar este projeto, você precisará de uma chave de API da [WeatherAPI]
 Crie um arquivo `.env` na raiz do projeto:
 
 ```env
-WEATHER_API_KEY=sua_chave_aqui
+WEATHER_API_KEY=9183415a0e684e268aa214636250111
 ```
 > **⚠️ Observação Importante:** O arquivo `.env` foi incluído no repositório propositalmente para facilitar a correção e execução do projeto sem necessidade de configuração de ambiente. Em um cenário real de produção, este arquivo deve ser ignorado (`.gitignore`) por conter dados sensíveis.
 
